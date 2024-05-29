@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="JPA_ORM_Bookstore MSSQL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>models.Author</class>
+        <class>models.Book</class>
+        <class>models.Category</class>
+        <class>models.Role</class>
+        <class>models.Account</class>
+        <class>models.Merchandise</class>
+        <class>models.Employee</class>
+        <class>models.ProductType</class>
+        <class>models.Supplier</class>
+        <class>models.Customer</class>
+        <class>models.Bill</class>
+        <class>models.Promotion</class>
+        <class>models.DetailsBill</class>
+        <class>models.ProductSale</class>
+        <class>models.BillPending</class>
+        <class>models.DetailsBillPending</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:sqlserver://localhost:1433;databaseName=QLHieuSach;trustServerCertificate=true"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password"
+                      value="sapassword"/>
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+
+            <property name="jakarta.persistence.jdbc.dialect"
+                      value="org.hibernate.dialect.SQLServer2012Dialect"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="JPA_ORM_Student MSSQL_Linux">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>models.Author</class>
+        <class>models.Book</class>
+        <class>models.Category</class>
+        <class>models.Role</class>
+        <class>models.Account</class>
+        <class>models.Merchandise</class>
+        <class>models.Employee</class>
+        <class>models.ProductType</class>
+        <class>models.Supplier</class>
+        <class>models.Customer</class>
+        <class>models.Bill</class>
+        <class>models.Promotion</class>
+        <class>models.DetailsBill</class>
+        <class>models.ProductSale</class>
+        <class>models.BillPending</class>
+        <class>models.DetailsBillPending</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:sqlserver://localhost:1433;databaseName=QLHieuSach;trustServerCertificate=true"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password"
+                      value="Password789"/>
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+
+            <property name="jakarta.persistence.jdbc.dialect"
+                      value="org.hibernate.dialect.SQLServer2012Dialect"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

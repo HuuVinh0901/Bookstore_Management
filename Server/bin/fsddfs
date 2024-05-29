@@ -1,0 +1,203 @@
+[33mcommit 0af09c7ec4164602df1067a12add49a118dfbb05[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Merge: a9f283f b243a2b
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sun Oct 29 22:51:53 2023 +0700
+
+    add
+
+[33mcommit b243a2b0102b2fff6d0c78e49aae8a57fe94fa25[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: f51e053 3bf9e0c
+Author: Hoangle1072003 <93639272+Hoangle1072003@users.noreply.github.com>
+Date:   Sun Oct 29 22:46:28 2023 +0700
+
+    Merge pull request #6 from HuuVinh0901/dev
+    
+     update ui
+
+[33mcommit 3bf9e0c217dfc9e7089e862338394c6d3a3dae8f[m
+Author: Vinh <phamhuuvinh0901@gmail.com>
+Date:   Sun Oct 29 22:37:59 2023 +0700
+
+     update ui
+
+[33mcommit a9f283fdc592488763f876e03a3d497fbfa83c08[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sun Oct 29 22:02:35 2023 +0700
+
+    add file
+
+[33mcommit 026a3807f143fb0dcad0110cfde42ad06c3f3b57[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sun Oct 29 15:54:32 2023 +0700
+
+    add combobox
+
+[33mcommit 06dc0485ddddcc0893aae55f0a9d49a0741d392d[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sun Oct 29 00:54:12 2023 +0700
+
+    add file
+
+[33mcommit f51e0531cc98830384e91c54d66ec48dad898718[m
+Merge: bd2eb4f effe813
+Author: Hoangle1072003 <93639272+Hoangle1072003@users.noreply.github.com>
+Date:   Sat Oct 28 23:47:20 2023 +0700
+
+    Merge pull request #4 from Hoangle1072003/dev
+    
+    Dev
+
+[33mcommit effe813a58afc529f992f94e01fe928f12b5332b[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sat Oct 28 23:46:40 2023 +0700
+
+    fix layout loaiSP
+
+[33mcommit 40d786f5229d5dd5af43f2fde309abd0b6b288d5[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sat Oct 28 17:15:36 2023 +0700
+
+    cap nhat sql
+
+[33mcommit 004f5fa371f55a080b2ea06e7c679a1cef08f050[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sat Oct 28 16:48:28 2023 +0700
+
+    create table gui sp
+
+[33mcommit bd2eb4ff7cc9cd2f1c16037baf1ace874f4fd51a[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sat Oct 28 15:06:10 2023 +0700
+
+    add file
+
+[33mcommit 6b332b96993e960c16e3d3e261b4ffc94b71d36d[m
+Merge: aadaef6 9ad8b47
+Author: Hoangle1072003 <93639272+Hoangle1072003@users.noreply.github.com>
+Date:   Sat Oct 28 12:17:50 2023 +0700
+
+    Merge pull request #3 from Hoangle1072003/dev
+    
+    hoan thanh ui san pham
+
+[33mcommit 9ad8b47a54cd40616b18276ad58dd5de29c27d2b[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sat Oct 28 12:02:28 2023 +0700
+
+    hoan thanh ui san pham
+
+[33mcommit aadaef6579f5f5d41075fac9592924618bc6985b[m
+Merge: ce342f5 f59383f
+Author: Hoangle1072003 <93639272+Hoangle1072003@users.noreply.github.com>
+Date:   Sat Oct 28 00:21:37 2023 +0700
+
+    Merge pull request #2 from Hoangle1072003/dev
+    
+    Dev
+
+[33mcommit f59383f02b5cc64e13e97b0d9c0dc74a78bfe42b[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Sat Oct 28 00:20:58 2023 +0700
+
+    add homeview
+
+[33mcommit f2e6f734fc759da196950d71d4c7da4aed209e84[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Fri Oct 27 23:44:13 2023 +0700
+
+    update giao dien san pham
+
+[33mcommit ce342f5856fa6175eef78c8adbe2cdd60c3c96b2[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 21:55:47 2023 +0700
+
+    delete txt
+
+[33mcommit f8cfbdb88b861a444c772308e81183121320caef[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 21:55:10 2023 +0700
+
+    test
+
+[33mcommit 94e3cfa8bb9ce99cf4ac06de428dadbebb9ff7af[m
+Merge: e1714cd 806605c
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 21:44:43 2023 +0700
+
+    Merge branch 'main' of github.com:Hoangle1072003/Manager_QuanLyHieuSach
+
+[33mcommit 806605cc602538b67c54ad0b926c563ac64198c7[m
+Merge: 795fa9a eb20383
+Author: Hoangle1072003 <93639272+Hoangle1072003@users.noreply.github.com>
+Date:   Thu Oct 26 21:43:53 2023 +0700
+
+    Merge pull request #1 from Hoangle1072003/dev
+    
+    create script sql
+
+[33mcommit e1714cde4da3dce5b8b31affcc42ec56ba39b124[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 21:33:55 2023 +0700
+
+    add file
+
+[33mcommit eb20383b175cb3f2e489317550aa16c44fbc2548[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 21:27:09 2023 +0700
+
+    create script sql
+
+[33mcommit 795fa9aa12b44be22401bf79217733fc7e50bcb0[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 11:25:21 2023 +0700
+
+    add file
+
+[33mcommit 5c47eb78264a31362fe98b588ab908f3c451f4a4[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 10:54:13 2023 +0700
+
+    update
+
+[33mcommit 48bb33ac38ffbd5596eb07e09a25f7ba91725228[m
+Merge: 546a7a5 f75a032
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 10:49:30 2023 +0700
+
+    Merge branch 'main' of github.com:Hoangle1072003/Manager_QuanLyHieuSach
+
+[33mcommit 546a7a5da611b739751dcedc940bb6e220328fc7[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Thu Oct 26 10:48:00 2023 +0700
+
+    thay doi giao dien
+
+[33mcommit f75a032b2e123605cc0a247ff51ca5172a035c58[m
+Author: Trần Vũ Duy <107357654+Duy2763@users.noreply.github.com>
+Date:   Thu Oct 26 10:33:31 2023 +0700
+
+    Create AnhHoangDinhQua
+
+[33mcommit 1a180fe238fbf7b9fc14c39456b02e9cdd02d682[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Wed Oct 25 23:29:12 2023 +0700
+
+    update date
+
+[33mcommit 1cf27610eb493133c8a75f813a31bff145dfe51e[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Wed Oct 25 23:18:26 2023 +0700
+
+    update
+
+[33mcommit da718a421d8d8e7810fc193cf3a79f26e12772f4[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Wed Oct 25 23:17:20 2023 +0700
+
+    add file
+
+[33mcommit 4cf19068f7de444a62f2db94c61bf4f2093d1dc9[m
+Author: ashleynguci <hoangkinboy@gmail.com>
+Date:   Wed Oct 25 23:14:26 2023 +0700
+
+    first commit
