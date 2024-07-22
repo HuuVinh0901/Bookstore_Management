@@ -1,4 +1,4 @@
-Bookstore Management Destop App.
+Bookstore Management Desktop App.
 
 Connect client & server by RMI (port server).
 
