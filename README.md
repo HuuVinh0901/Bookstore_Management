@@ -2,208 +2,228 @@ Hibernate ORM is a powerful object/relational mapping solution for Java, and mak
 
 Hibernate implements JPA, the standard API for object/relational persistence in Java, but also offers an extensive set of features and APIs which go beyond the specification.
 
-See Hibernate.org for more information.
+See https://hibernate.org/orm/[Hibernate.org] for more information.
 
-Build Status Revved%20up%20by Develocity 06A0CE?logo=Gradle&labelColor=02303A
+image:https://ci.hibernate.org/job/hibernate-orm-pipeline/job/main/badge/icon[Build Status,link=https://ci.hibernate.org/job/hibernate-orm-pipeline/job/main/]
+image:https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&labelColor=02303A[link=https://ge.hibernate.org/scans]
 
-Continuous Integration
-Hibernate uses both Jenkins and GitHub Actions for its CI needs. See
+== Continuous Integration
 
-Jenkins Jobs
+Hibernate uses both https://jenkins-ci.org[Jenkins] and https://github.com/features/actions[GitHub Actions]
+for its CI needs. See
 
-GitHub Actions Jobs
+* https://ci.hibernate.org/view/ORM/[Jenkins Jobs]
+* https://github.com/hibernate/hibernate-orm/actions[GitHub Actions Jobs]
 
-Building from sources
+== Building from sources
+
 The build requires at least Java 11 and at most Java 17.
 
-Hibernate uses Gradle as its build tool. See the Gradle Primer section below if you are new to Gradle.
+Hibernate uses https://gradle.org[Gradle] as its build tool. See the _Gradle Primer_ section below if you are new to
+Gradle.
 
-Contributors should read the Contributing Guide.
+Contributors should read the link:CONTRIBUTING.md[Contributing Guide].
 
-See the guides for setting up IntelliJ or Eclipse as your development environment.
+See the guides for setting up https://hibernate.org/community/contribute/intellij-idea/[IntelliJ] or
+https://hibernate.org/community/contribute/eclipse-ide/[Eclipse] as your development environment.
 
-Gradle Primer
-The Gradle build tool has amazing documentation. 2 in particular that are indispensable:
+== Gradle Primer
 
-Gradle User Guide is a typical user guide in that it follows a topical approach to describing all of the capabilities of Gradle.
+The Gradle build tool has amazing documentation.  2 in particular that are indispensable:
 
-Gradle DSL Guide is unique and excellent in quickly getting up to speed on certain aspects of Gradle.
+* https://docs.gradle.org/current/userguide/userguide_single.html[Gradle User Guide] is a typical user guide in that
+it follows a topical approach to describing all of the capabilities of Gradle.
+* https://docs.gradle.org/current/dsl/index.html[Gradle DSL Guide] is unique and excellent in quickly
+getting up to speed on certain aspects of Gradle.
 
 We will cover the basics developers and contributors new to Gradle need to know to get productive quickly.
 
-Note
-The project defines a Gradle Wrapper. The rest of the section will assume execution through the wrapper.
-Executing Tasks
-Gradle uses the concept of build tasks (equivalent to Ant targets or Maven phases/goals). You can get a list of available tasks via
+NOTE: The project defines a https://docs.gradle.org/current/userguide/gradle_wrapper.html[Gradle Wrapper].
+The rest of the section will assume execution through the wrapper.
 
+=== Executing Tasks
+
+Gradle uses the concept of build tasks (equivalent to Ant targets or Maven phases/goals). You can get a list of
+available tasks via 
+
+----
 gradle tasks
-To execute a task across all modules, simply perform that task from the root directory. Gradle will visit each sub-project and execute that task if the sub-project defines it. To execute a task in a specific module you can either:
+----
 
-cd into that module directory and execute the task
+To execute a task across all modules, simply perform that task from the root directory. Gradle will visit each
+sub-project and execute that task if the sub-project defines it. To execute a task in a specific module you can
+either:
 
-name the "task path". For example, to run the tests for the hibernate-core module from the root directory you could say gradle hibernate-core:test
+. `cd` into that module directory and execute the task
+. name the "task path". For example, to run the tests for the _hibernate-core_ module from the root directory
+you could say `gradle hibernate-core:test`
 
-Common tasks
+=== Common tasks
+
 The common tasks you might use in building Hibernate include:
 
-build - Assembles (jars) and tests this project
+* _build_ - Assembles (jars) and tests this project
+* _compile_ - Performs all compilation tasks including staging resources from both main and test
+* _jar_ - Generates a jar archive with all the compiled classes
+* _test_ - Runs the tests
+* _publishToMavenLocal_ - Installs the project jar to your local maven cache (aka ~/.m2/repository). Note that Gradle
+never uses this, but it can be useful for testing your build with other local Maven-based builds.
+* _clean_ - Cleans the build directory
 
-compile - Performs all compilation tasks including staging resources from both main and test
+== Testing and databases
 
-jar - Generates a jar archive with all the compiled classes
-
-test - Runs the tests
-
-publishToMavenLocal - Installs the project jar to your local maven cache (aka ~/.m2/repository). Note that Gradle never uses this, but it can be useful for testing your build with other local Maven-based builds.
-
-clean - Cleans the build directory
-
-Testing and databases
 Testing against a specific database can be achieved in 2 different ways:
 
-Using the "Matrix Testing Plugin" for Gradle.
+=== Using the "Matrix Testing Plugin" for Gradle.
+
 Coming later…
 
-Using "profiles"
-The Hibernate build defines several database testing "profiles" in databases.gradle. These profiles can be activated by name using the db build property which can be passed either as a JVM system prop (-D) or as a Gradle project property (-P). Examples below use the Gradle project property approach.
+=== Using "profiles"
 
+The Hibernate build defines several database testing "profiles" in `databases.gradle`. These
+profiles can be activated by name using the `db` build property which can be passed either as
+a JVM system prop (`-D`) or as a Gradle project property (`-P`). Examples below use the Gradle
+project property approach.
+
+----
 gradle clean build -Pdb=pgsql
-To run a test from your IDE, you need to ensure the property expansions happen. Use the following command:
+----
 
+To run a test from your IDE, you need to ensure the property expansions happen.
+Use the following command:
+
+----
 gradle clean compile -Pdb=pgsql
-NOTE: If you are running tests against a JDBC driver that is not available via Maven central be sure to add these drivers to your local Maven repo cache (~/.m2/repository) or (better) add it to a personal Maven repo server
+----
 
-Running database-specific tests from the IDE using "profiles"
-You can run any test on any particular database that is configured in a databases.gradle profile.
+__NOTE: If you are running tests against a JDBC driver that is not available via Maven central be sure to
+add these drivers to your local Maven repo cache (~/.m2/repository) or (better) add it to a personal Maven repo server__
+
+=== Running database-specific tests from the IDE using "profiles"
+
+You can run any test on any particular database that is configured in a `databases.gradle` profile.
 
 All you have to do is run the following command:
 
+----
 ./gradlew setDataBase -Pdb=pgsql
-or you can use the shortcut version:
+----
 
+or you can use the shortcut version: 
+
+----
 ./gradlew sDB -Pdb=pgsql
-You can do this from the module which you are interested in testing or from the hibernate-orm root folder.
+----
 
-Afterward, just pick any test from the IDE and run it as usual. Hibernate will pick the database configuration from the hibernate.properties file that was set up by the setDataBase Gradle task.
+You can do this from the module which you are interested in testing or from the `hibernate-orm` root folder.
 
-Starting test databases locally as docker containers
-You don’t have to install all databases locally to be able to test against them in case you have docker available. The script docker_db.sh allows you to start a pre-configured database which can be used for testing.
+Afterward, just pick any test from the IDE and run it as usual. Hibernate will pick the database configuration from the `hibernate.properties`
+file that was set up by the `setDataBase` Gradle task.
+
+=== Starting test databases locally as docker containers
+
+You don't have to install all databases locally to be able to test against them in case you have docker available.
+The script `docker_db.sh` allows you to start a pre-configured database which can be used for testing.
 
 All you have to do is run the following command:
 
+----
 ./docker_db.sh postgresql
+----
+
 omitting the argument will print a list of possible options.
 
-When the database is properly started, you can run tests with special profiles that are suffixed with _ci e.g. pgsql_ci for PostgreSQL. By using the system property dbHost you can configure the IP address of your docker host.
+When the database is properly started, you can run tests with special profiles that are suffixed with `_ci`
+e.g. `pgsql_ci` for PostgreSQL. By using the system property `dbHost` you can configure the IP address of your docker host.
 
 The command for running tests could look like the following:
 
+----
 ./gradlew test -Pdb=pgsql_ci "-DdbHost=192.168.99.100"
+----
+
 The following table illustrates a list of commands for various databases that can be tested locally.
 
-Database	docker_db.sh	Gradle command
-H2
+|===
+|Database |`docker_db.sh` |Gradle command
 
--
+|H2
+|-
+|`./gradlew test -Pdb=h2`
 
-./gradlew test -Pdb=h2
+|HSQLDB
+|-
+|`./gradlew test -Pdb=hsqldb`
 
-HSQLDB
+|Apache Derby
+|-
+|`./gradlew test -Pdb=derby`
 
--
+|MySQL
+|`./docker_db.sh mysql`
+|`./gradlew test -Pdb=mysql_ci`
 
-./gradlew test -Pdb=hsqldb
+|MariaDB
+|`./docker_db.sh mariadb`
+|`./gradlew test -Pdb=mariadb_ci`
 
-Apache Derby
+|PostgreSQL
+|`./docker_db.sh postgresql`
+|`./gradlew test -Pdb=pgsql_ci`
 
--
+|EnterpriseDB
+|`./docker_db.sh edb`
+|`./gradlew test -Pdb=edb_ci`
 
-./gradlew test -Pdb=derby
+|Oracle
+|`./docker_db.sh oracle`
+|`./gradlew test -Pdb=oracle_ci`
 
-MySQL
+|DB2
+|`./docker_db.sh db2`
+|`./gradlew test -Pdb=db2_ci`
 
-./docker_db.sh mysql
+|SQL Server
+|`./docker_db.sh mssql`
+|`./gradlew test -Pdb=mssql_ci`
 
-./gradlew test -Pdb=mysql_ci
+|Sybase ASE (jTDS)
+|`./docker_db.sh sybase`
+|`./gradlew test -Pdb=sybase_ci`
 
-MariaDB
+|Sybase ASE (jConnect)
+|`./docker_db.sh sybase`
+|`./gradlew test -Pdb=sybase_jconn_ci`
 
-./docker_db.sh mariadb
+|SAP HANA
+|`./docker_db.sh hana`
+|`./gradlew test -Pdb=hana_ci`
 
-./gradlew test -Pdb=mariadb_ci
+|CockroachDB
+|`./docker_db.sh cockroachdb`
+|`./gradlew test -Pdb=cockroachdb`
 
-PostgreSQL
+|TiDB
+|`./docker_db.sh tidb`
+|`./gradlew test -Pdb=tidb`
 
-./docker_db.sh postgresql
+|Informix
+|`./docker_db.sh informix`
+|`./gradlew test -Pdb=informix`
+|===
 
-./gradlew test -Pdb=pgsql_ci
+To stop a container started by `docker`, use the command
 
-EnterpriseDB
-
-./docker_db.sh edb
-
-./gradlew test -Pdb=edb_ci
-
-Oracle
-
-./docker_db.sh oracle
-
-./gradlew test -Pdb=oracle_ci
-
-DB2
-
-./docker_db.sh db2
-
-./gradlew test -Pdb=db2_ci
-
-SQL Server
-
-./docker_db.sh mssql
-
-./gradlew test -Pdb=mssql_ci
-
-Sybase ASE (jTDS)
-
-./docker_db.sh sybase
-
-./gradlew test -Pdb=sybase_ci
-
-Sybase ASE (jConnect)
-
-./docker_db.sh sybase
-
-./gradlew test -Pdb=sybase_jconn_ci
-
-SAP HANA
-
-./docker_db.sh hana
-
-./gradlew test -Pdb=hana_ci
-
-CockroachDB
-
-./docker_db.sh cockroachdb
-
-./gradlew test -Pdb=cockroachdb
-
-TiDB
-
-./docker_db.sh tidb
-
-./gradlew test -Pdb=tidb
-
-Informix
-
-./docker_db.sh informix
-
-./gradlew test -Pdb=informix
-
-To stop a container started by docker, use the command
-
+[source]
+----
 docker stop $container_name
-NOTE
-Substitute podman command for docker if using podman
+----
+
+NOTE:: Substitute `podman` command for `docker` if using `podman`
 
 E.g., to stop the mariadb container
 
+[source]
+----
 docker stop mariadb
+----
